@@ -217,8 +217,8 @@ export default function MiniDrawer() {
         <DrawerHeader />
         <Routes>
           {/* Define your routes here */}
-          <Route path="/" element={<Main />} /> {/* Default route */}
-          <Route path="/dashboard" element={<Main />} />
+          <Route path="/" element={<DashboardFive />} /> {/* Default route */}
+          <Route path="/dashboard" element={<DashboardFive />} />
           <Route path="/dashboardtwo" element={<DashboardTwo />} />
           <Route path="/dashboardthree" element={<DashboardFive />} />
           <Route path="/Starred" element={<DashBoardComp />} />
