@@ -8,6 +8,7 @@ import CreateTicket from "../Components/CreateTicket";
 import UserProfile from "./UserProfile";
 import TicketList from "./TicketList";
 import DashBoardComp from "../DashboardThree/DashBoardComponents/DashBoardComp";
+import MainTicket from "../TicketsFlow/TicketsComponent/MainTicket";
 
 const Container = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),

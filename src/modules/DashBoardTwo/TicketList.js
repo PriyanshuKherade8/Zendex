@@ -37,12 +37,62 @@ const rows = [
     priority: "Low",
     assignee: "Jane Doe",
   },
-  // Add more rows as needed
+  {
+    id: "123525",
+    subject: "Issue with login",
+    status: "Open",
+    priority: "High",
+    assignee: "John Doe",
+  },
+  {
+    id: "125246",
+    subject: "Feature request",
+    status: "Closed",
+    priority: "Low",
+    assignee: "Jane Doe",
+  },
+  {
+    id: "123555",
+    subject: "Issue with login",
+    status: "Open",
+    priority: "High",
+    assignee: "John Doe",
+  },
+  {
+    id: "125246",
+    subject: "Feature request",
+    status: "Closed",
+    priority: "Low",
+    assignee: "Jane Doe",
+  },
+  {
+    id: "12545116",
+    subject: "Feature request",
+    status: "Closed",
+    priority: "Low",
+    assignee: "Jane Doe",
+  },
+  {
+    id: "125246",
+    subject: "Feature request",
+    status: "Closed",
+    priority: "Low",
+    assignee: "Jane Doe",
+  },
+  {
+    id: "12545116",
+    subject: "Feature request",
+    status: "Closed",
+    priority: "Low",
+    assignee: "Jane Doe",
+  },
 ];
 
 const TicketListContainer = styled(Paper)({
   width: "100%",
   overflow: "hidden",
+  // border: "1px solid red",
+  height: "100%",
 });
 
 const TicketList = () => {
@@ -59,8 +109,8 @@ const TicketList = () => {
   };
 
   return (
-    <TicketListContainer>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <TicketListContainer variant="outlined">
+      <TableContainer sx={{ maxHeight: 540 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>

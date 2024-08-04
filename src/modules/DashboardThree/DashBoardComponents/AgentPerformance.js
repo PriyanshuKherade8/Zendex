@@ -86,6 +86,14 @@ const AgentPerformance = () => (
             <span>Bob Johnson</span>
             <span>876 tickets</span>
           </AgentInfo>
+          <AgentInfo>
+            <span>John Doe</span>
+            <span>1,234 tickets</span>
+          </AgentInfo>
+          <AgentInfo>
+            <span>Jane Smith</span>
+            <span>987 tickets</span>
+          </AgentInfo>
         </Box>
       </Box>
     </CardContentWrapper>

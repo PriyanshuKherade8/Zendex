@@ -28,6 +28,8 @@ import TicketTrends from "./DashBoardComponents/TicketTrends";
 import AgentPerformance from "./DashBoardComponents/AgentPerformance";
 import CustomerSatisfaction from "./DashBoardComponents/CustomerSatisfaction";
 import ResolutionTime from "./DashBoardComponents/ResolutionTime";
+import FilterCard from "../TicketsFlow/TicketsComponent/FilterCard";
+import MainTicket from "../TicketsFlow/TicketsComponent/MainTicket";
 
 const DashboardFive = () => {
   const data = [

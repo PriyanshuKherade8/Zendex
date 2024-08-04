@@ -60,7 +60,7 @@ export const CardContentWrapper = styled(CardContent)`
 
 export const MainContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   min-height: 100vh;
   background-color: #f9f9f9;
   border-radius: 15px;
@@ -69,5 +69,9 @@ export const MainContainer = styled.div`
 export const ContentWrapper = styled.div`
   flex: 1;
   padding: 10px;
-  // border: 1px solid red;
+`;
+
+export const ContentWrapper2 = styled.div`
+  flex: 2;
+  padding: 10px;
 `;
