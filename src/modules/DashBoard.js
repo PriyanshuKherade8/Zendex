@@ -20,13 +20,12 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Routes, Route, useNavigate } from "react-router-dom"; // Import Routes and Route
 import TestComponent from "./Components/TestComponent"; // Sample component import
-import StickyHeadTable from "./Table";
-import TestComponentTwo from "./Components/TestComponentTwo";
+
 import Main from "./Main";
 import DashboardTwo from "./DashBoardTwo/DashBoardTwo";
-import DashboardThree from "./DashboardThree/DashboardThree";
-import DashboardFour from "./DashboardThree/DashboardThree";
+
 import DashboardFive from "./DashboardThree/DashboardFour";
+import DashBoardComp from "./DashboardThree/DashBoardComponents/DashBoardComp";
 
 const drawerWidth = 240;
 
@@ -222,7 +221,7 @@ export default function MiniDrawer() {
           <Route path="/dashboard" element={<Main />} />
           <Route path="/dashboardtwo" element={<DashboardTwo />} />
           <Route path="/dashboardthree" element={<DashboardFive />} />
-          <Route path="/send-email" element={<TestComponent />} />
+          <Route path="/Starred" element={<DashBoardComp />} />
           <Route path="/drafts" element={<TestComponent />} />
           <Route path="/all-mail" element={<TestComponent />} />
           <Route path="/trash" element={<TestComponent />} />

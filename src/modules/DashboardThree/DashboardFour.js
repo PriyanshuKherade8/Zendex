@@ -11,7 +11,7 @@ import {
   MainContainer,
   ContentWrapper,
 } from "./StyledComponents";
-import { Grid, IconButton, Avatar, Typography } from "@mui/material";
+import { Grid, IconButton, Avatar, Typography, Box } from "@mui/material";
 import {
   LineChart,
   Line,
@@ -21,7 +21,14 @@ import {
   PieChart,
   Pie,
 } from "recharts";
-import TicketIcon from "@mui/icons-material/ConfirmationNumber";
+// import TicketIcon from "@mui/icons-material/ConfirmationNumber";
+import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
+import { TicketCard } from "./TicketCard";
+import TicketsByPriority from "./DashBoardComponents/TicketsByPriority";
+import TicketTrends from "./DashBoardComponents/TicketTrends";
+import AgentPerformance from "./DashBoardComponents/AgentPerformance";
+import CustomerSatisfaction from "./DashBoardComponents/CustomerSatisfaction";
+import ResolutionTime from "./DashBoardComponents/ResolutionTime";
 
 const DashboardFive = () => {
   const data = [
@@ -41,104 +48,66 @@ const DashboardFive = () => {
     { name: "Group D", value: 200 },
   ];
 
+  const ticketData = [
+    {
+      title: "Total Tickets",
+      count: "12,345",
+      percentage: "+5.2% from last month",
+      icon: <ConfirmationNumberOutlinedIcon />,
+      color: "#8884d8",
+    },
+    {
+      title: "Open Tickets",
+      count: "3,456",
+      percentage: "+12% from last month",
+      icon: <ConfirmationNumberOutlinedIcon />,
+      color: "#82ca9d",
+    },
+    {
+      title: "Closed Tickets",
+      count: "8,234",
+      percentage: "+3% from last month",
+      icon: <ConfirmationNumberOutlinedIcon />,
+      color: "#ffc658",
+    },
+    {
+      title: "Pending Tickets",
+      count: "655",
+      percentage: "-2% from last month",
+      icon: <ConfirmationNumberOutlinedIcon />,
+      color: "#d884d8",
+    },
+  ];
+
   return (
     <MainContainer>
-      <StyledAppBar position="static">
-        <StyledToolbar>
-          <Typography variant="h6" noWrap>
-            Zendesk
-          </Typography>
-          <SearchWrapper>
-            <StyledSearchIcon />
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </SearchWrapper>
-          <IconButton edge="end" color="inherit">
-            <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
-          </IconButton>
-        </StyledToolbar>
-      </StyledAppBar>
       <ContentWrapper>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardContentWrapper>
-                <TicketIcon />
-                <CardTitle>Total Tickets</CardTitle>
-                <Typography variant="h5">12,345</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  +5.2% from last month
-                </Typography>
-              </CardContentWrapper>
-            </Card>
+          {ticketData.map((ticket, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <TicketCard
+                title={ticket.title}
+                count={ticket.count}
+                percentage={ticket.percentage}
+                icon={ticket.icon}
+                color={ticket.color}
+              />
+            </Grid>
+          ))}
+          <Grid item xs={12} md={4}>
+            <TicketsByPriority />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardContentWrapper>
-                <TicketIcon />
-                <CardTitle>Open Tickets</CardTitle>
-                <Typography variant="h5">3,456</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  +12% from last month
-                </Typography>
-              </CardContentWrapper>
-            </Card>
+          <Grid item xs={12} md={4}>
+            <TicketTrends />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardContentWrapper>
-                <TicketIcon />
-                <CardTitle>Closed Tickets</CardTitle>
-                <Typography variant="h5">8,234</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  +3% from last month
-                </Typography>
-              </CardContentWrapper>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardContentWrapper>
-                <TicketIcon />
-                <CardTitle>Pending Tickets</CardTitle>
-                <Typography variant="h5">655</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  -2% from last month
-                </Typography>
-              </CardContentWrapper>
-            </Card>
+          <Grid item xs={12} md={4}>
+            <AgentPerformance />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card>
-              <CardContentWrapper>
-                <Typography variant="h6">Ticket Trends</Typography>
-                <LineChart width={400} height={200} data={data}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-                </LineChart>
-              </CardContentWrapper>
-            </Card>
+            <CustomerSatisfaction />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card>
-              <CardContentWrapper>
-                <Typography variant="h6">Customer Satisfaction</Typography>
-                <PieChart width={400} height={200}>
-                  <Pie
-                    data={pieData}
-                    cx={200}
-                    cy={100}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    label
-                  />
-                </PieChart>
-              </CardContentWrapper>
-            </Card>
+            <ResolutionTime />
           </Grid>
         </Grid>
       </ContentWrapper>

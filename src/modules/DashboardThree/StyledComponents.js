@@ -55,7 +55,7 @@ export const CardTitle = styled(Typography)`
 export const CardContentWrapper = styled(CardContent)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
 `;
 
 export const MainContainer = styled.div`
@@ -67,5 +67,6 @@ export const MainContainer = styled.div`
 
 export const ContentWrapper = styled.div`
   flex: 1;
-  padding: 20px;
+  padding: 10px;
+  // border: 1px solid red;
 `;
