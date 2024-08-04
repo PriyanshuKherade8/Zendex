@@ -226,6 +226,10 @@ export default function MiniDrawer() {
           <Route path="/all-mail" element={<TestComponent />} />
           <Route path="/trash" element={<TestComponent />} />
           <Route path="/spam" element={<TestComponent />} />
+          <Route path="/total-tickets" element={<DashboardTwo />} />
+          <Route path="/open-tickets" element={<>{"juu"}</>} />
+          <Route path="/closed-tickets" element={<>{"juu"}</>} />
+          <Route path="/pending-tickets" element={<>{"juu"}</>} />
         </Routes>
       </Box>
     </Box>

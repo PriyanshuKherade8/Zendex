@@ -63,6 +63,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background-color: #f9f9f9;
+  border-radius: 15px;
 `;
 
 export const ContentWrapper = styled.div`

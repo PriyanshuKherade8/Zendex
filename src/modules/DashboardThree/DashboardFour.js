@@ -21,7 +21,6 @@ import {
   PieChart,
   Pie,
 } from "recharts";
-// import TicketIcon from "@mui/icons-material/ConfirmationNumber";
 import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
 import { TicketCard } from "./TicketCard";
 import TicketsByPriority from "./DashBoardComponents/TicketsByPriority";
@@ -55,6 +54,7 @@ const DashboardFive = () => {
       percentage: "+5.2% from last month",
       icon: <ConfirmationNumberOutlinedIcon />,
       color: "#8884d8",
+      to: "/total-tickets",
     },
     {
       title: "Open Tickets",
@@ -62,6 +62,7 @@ const DashboardFive = () => {
       percentage: "+12% from last month",
       icon: <ConfirmationNumberOutlinedIcon />,
       color: "#82ca9d",
+      to: "/open-tickets",
     },
     {
       title: "Closed Tickets",
@@ -69,6 +70,7 @@ const DashboardFive = () => {
       percentage: "+3% from last month",
       icon: <ConfirmationNumberOutlinedIcon />,
       color: "#ffc658",
+      to: "/closed-tickets",
     },
     {
       title: "Pending Tickets",
@@ -76,6 +78,7 @@ const DashboardFive = () => {
       percentage: "-2% from last month",
       icon: <ConfirmationNumberOutlinedIcon />,
       color: "#d884d8",
+      to: "/pending-tickets",
     },
   ];
 
@@ -91,6 +94,7 @@ const DashboardFive = () => {
                 percentage={ticket.percentage}
                 icon={ticket.icon}
                 color={ticket.color}
+                to={ticket.to}
               />
             </Grid>
           ))}
