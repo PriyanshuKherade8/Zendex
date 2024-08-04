@@ -133,7 +133,7 @@ const CustomerSatisfaction = () => (
             </Typography>
           </NegativeFeedback>
         </FeedbackText>
-        <div style={{ height: "292px" }}>
+        <div style={{ height: "260px" }}>
           <Pie data={data} options={options} />
         </div>
       </ChartContainer>
