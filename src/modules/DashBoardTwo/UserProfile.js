@@ -19,14 +19,14 @@ const UserProfile = ({ user }) => {
   return (
     <Container>
       <Avatar
-        src={user.avatar}
-        alt={user.name}
+        src={user?.avatar}
+        alt={user?.name}
         sx={{ width: 100, height: 100 }}
       />
-      <Typography variant="h5">{user.name}</Typography>
-      <Typography variant="body1">{user.email}</Typography>
-      <Typography variant="body1">{user.phone}</Typography>
-      <Typography variant="body1">{user.company}</Typography>
+      <Typography variant="h5">{user?.name}</Typography>
+      <Typography variant="body1">{user?.email}</Typography>
+      <Typography variant="body1">{user?.phone}</Typography>
+      <Typography variant="body1">{user?.company}</Typography>
     </Container>
   );
 };

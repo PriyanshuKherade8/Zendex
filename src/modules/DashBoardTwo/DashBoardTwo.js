@@ -9,6 +9,7 @@ import UserProfile from "./UserProfile";
 import TicketList from "./TicketList";
 import DashBoardComp from "../DashboardThree/DashBoardComponents/DashBoardComp";
 import MainTicket from "../TicketsFlow/TicketsComponent/MainTicket";
+import TaskDetails from "../Components/TaskDetails";
 
 const Container = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -43,6 +44,9 @@ const DashboardTwo = () => {
         </Grid>
         <Grid item xs={12}>
           <UserProfile user={selectedTicket ? selectedTicket.user : null} />
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <TaskDetails />
         </Grid>
       </Grid>
     </Container>
