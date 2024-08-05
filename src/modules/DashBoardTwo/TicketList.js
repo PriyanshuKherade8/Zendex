@@ -139,7 +139,7 @@ const TicketList = () => {
 
   return (
     <TicketListContainer variant="outlined" style={{ borderRadius: "12px" }}>
-      <TableContainer sx={{ maxHeight: 540 }}>
+      <TableContainer sx={{ maxHeight: 600 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>

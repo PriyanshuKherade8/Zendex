@@ -6,24 +6,27 @@ import {
   CardActions,
   Typography,
   TextField,
-  MenuItem,
-  Button,
-  Popover,
-  IconButton,
   Grid,
+  Button,
+  styled,
 } from "@mui/material";
-import { CalendarToday } from "@mui/icons-material";
-import { styled } from "@mui/material/styles";
-import Input from "../../UIComp/Input/Input";
-import Dropdown from "../../UIComp/dropdown/Dropdown";
+import { Search } from "@mui/icons-material";
+import Input from "../../UIComp/Input/Input"; // Adjust as necessary
+import Dropdown from "../../UIComp/dropdown/Dropdown"; // Adjust as necessary
 import { useForm } from "react-hook-form";
 
-const CustomButton = styled(Button)({
+const CustomButton = styled(Button)(({ theme }) => ({
   width: "100%",
   justifyContent: "flex-start",
   textAlign: "left",
   fontWeight: "normal",
-});
+  borderRadius: "12px",
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.common.white,
+  "&:hover": {
+    backgroundColor: theme.palette.primary.dark,
+  },
+}));
 
 const FilterCard = () => {
   const {
@@ -53,41 +56,49 @@ const FilterCard = () => {
     <Card
       variant="outlined"
       sx={{
-        // maxWidth: 400,
-        // mx: "auto",
-        padding: "4px",
-        height: "100%",
-        borderRadius: "12px",
+        padding: "16px",
+        borderRadius: "16px",
+        // boxShadow: 3,
+        backgroundColor: "#ffffff",
+        // height: "150px",
       }}
     >
       <CardHeader
-        style={{
-          fontFamily: "system-ui",
-          fontSize: "15px",
-          // border: "1px solid red",
-        }}
-        title="Filters"
-        subheader="Apply filters to your Zendesk ticket list."
+        title={
+          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+            Filters
+          </Typography>
+        }
+        subheader={
+          <Typography variant="body2" color="textSecondary">
+            Apply filters to your Zendesk ticket list.
+          </Typography>
+        }
       />
 
       <CardContent>
         <form>
-          <Grid container spacing={1}>
+          <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Input
-                id={"ticket_id"}
-                name={"ticket_id"}
+                id="ticket_id"
+                name="ticket_id"
                 placeholder="Enter Ticket ID"
-                label={"Ticket ID"}
+                label="Ticket ID"
                 isRequired={false}
+                InputProps={{
+                  startAdornment: (
+                    <Search style={{ color: "gray", marginRight: "8px" }} />
+                  ),
+                }}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <Input
-                id={"ticketnum"}
-                name={"ticketnum"}
+                id="ticketnum"
+                name="ticketnum"
                 placeholder="Enter Ticket Number"
-                label={"Ticket Number"}
+                label="Ticket Number"
                 isRequired={false}
               />
             </Grid>
@@ -173,7 +184,9 @@ const FilterCard = () => {
         </form>
       </CardContent>
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Button variant="contained">Apply</Button>
+        <Button variant="contained" size="small">
+          Apply
+        </Button>
       </CardActions>
     </Card>
   );

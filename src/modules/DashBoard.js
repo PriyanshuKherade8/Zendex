@@ -29,7 +29,9 @@ import DashBoardComp from "./DashboardThree/DashBoardComponents/DashBoardComp";
 import MainTicket from "./TicketsFlow/TicketsComponent/MainTicket";
 import SearchFilter from "./TicketsFlow/TicketsComponent/SearchFilter";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import RaiseForm from "./TicketsFlow/TicketsComponent/RaiseForm";
+import TicketView from "./ViewTicket/TicketView";
 
 const drawerWidth = 240;
 
@@ -152,7 +154,10 @@ export default function MiniDrawer() {
           >
             Raise Ticket
           </Button>
-          <AccountCircleOutlinedIcon />
+          <NotificationsNoneOutlinedIcon
+            sx={{ color: "white", marginRight: "12px" }}
+          />
+          <AccountCircleOutlinedIcon sx={{ color: "white" }} />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -247,7 +252,7 @@ export default function MiniDrawer() {
           <Route path="/closed-tickets" element={<SearchFilter />} />
           <Route path="/pending-tickets" element={<SearchFilter />} />
           <Route path="/raise-ticket" element={<RaiseForm />} />
-          <Route path="/ticket/:id" element={<>{"ticket"}</>} />
+          <Route path="/ticket/:id" element={<TicketView />} />
         </Routes>
       </Box>
     </Box>
