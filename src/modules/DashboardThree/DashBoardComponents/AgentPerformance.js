@@ -49,13 +49,33 @@ const AgentPerformance = () => (
         }}
       >
         <Box style={{ textAlign: "center" }}>
-          <Typography variant="h4">8.2</Typography>
+          <Typography
+            variant="h4"
+            style={{
+              fontSize: "25px",
+              fontWeight: "600",
+              fontFamily: "system-ui",
+              marginBottom: "5px",
+            }}
+          >
+            8.2
+          </Typography>
           <Typography variant="body2" color="textSecondary">
             Tickets per agent
           </Typography>
         </Box>
         <Box style={{ textAlign: "center" }}>
-          <Typography variant="h4">4h 32m</Typography>
+          <Typography
+            variant="h4"
+            style={{
+              fontSize: "25px",
+              fontWeight: "600",
+              fontFamily: "system-ui",
+              marginBottom: "5px",
+            }}
+          >
+            4h 32m
+          </Typography>
           <Typography variant="body2" color="textSecondary">
             Avg. response time
           </Typography>

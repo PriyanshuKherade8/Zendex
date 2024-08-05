@@ -57,6 +57,7 @@ const FilterCard = () => {
         // mx: "auto",
         padding: "4px",
         height: "100%",
+        borderRadius: "12px",
       }}
     >
       <CardHeader

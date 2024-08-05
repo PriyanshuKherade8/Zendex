@@ -6,23 +6,24 @@ import {
   ContentWrapper2,
   ContentWrapper,
   MainContainer,
+  MainContainerTwo,
 } from "../../DashboardThree/StyledComponents";
 import TicketList from "../../DashBoardTwo/TicketList";
 
 const SearchFilter = () => {
   return (
-    <MainContainer>
+    <MainContainerTwo>
       <ContentWrapper>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={9}>
             <TicketList />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <FilterCard />
           </Grid>
         </Grid>
       </ContentWrapper>
-    </MainContainer>
+    </MainContainerTwo>
   );
 };
 

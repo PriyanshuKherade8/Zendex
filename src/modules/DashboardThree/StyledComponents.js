@@ -66,6 +66,14 @@ export const MainContainer = styled.div`
   border-radius: 15px;
 `;
 
+export const MainContainerTwo = styled.div`
+  display: flex;
+  // flex-direction: column;
+  // min-height: 100vh;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+`;
+
 export const ContentWrapper = styled.div`
   flex: 1;
   padding: 10px;
