@@ -397,6 +397,7 @@ export default function MiniDrawer() {
           {/* This will push the button to the right */}
           <Button
             variant="contained"
+            size="small"
             color="primary"
             onClick={() => handleNavigation("/raise-ticket")}
             style={{ marginRight: "10px" }}

@@ -137,15 +137,12 @@ const TicketList = () => {
                         <TableCell key={column.id} align={column.align}>
                           {column.id === "actions" ? (
                             <div>
-                              <Button variant="contained" color="primary">
-                                View
-                              </Button>
                               <Button
-                                variant="outlined"
-                                color="secondary"
-                                style={{ marginLeft: 8 }}
+                                variant="contained"
+                                color="primary"
+                                size="small"
                               >
-                                Edit
+                                View
                               </Button>
                             </div>
                           ) : (
