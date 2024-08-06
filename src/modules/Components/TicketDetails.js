@@ -11,6 +11,7 @@ import {
   Paper,
   styled,
 } from "@mui/material";
+import { primaryColor } from "../ThemeColor";
 
 const Container = styled(Card)({
   margin: "auto",
@@ -28,7 +29,7 @@ const CustomCardHeader = styled(CardHeader)({
   },
   "& .MuiCardHeader-subheader": {
     fontSize: "16px",
-    color: "black",
+    color: primaryColor,
     fontSize: "18px",
     fontWeight: "500",
   },
@@ -36,13 +37,13 @@ const CustomCardHeader = styled(CardHeader)({
 
 const CustomTypography = styled(Typography)({
   fontFamily: "system-ui",
-  fontSize: "14px",
+  fontSize: "15px",
 });
 
 const ConversationTypography = styled(Typography)({
   fontFamily: "system-ui",
-  fontSize: "16px",
-  fontWeight: "bold",
+  fontSize: "20px",
+  fontWeight: "600",
 });
 
 const CustomPaper = styled(Paper)({
@@ -88,10 +89,10 @@ const TicketDetails = () => {
         }}
       />
       <CardContent style={{ padding: "4px" }}>
-        <CustomTypography variant="body1" paragraph>
+        <CustomTypography variant="h6" paragraph>
           {ticket.description}
         </CustomTypography>
-        <Divider sx={{ my: 2 }} />
+        <Divider sx={{ margin: "5px 0px" }} />
         <ConversationTypography variant="h6" gutterBottom>
           Conversation
         </ConversationTypography>
