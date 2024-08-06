@@ -21,15 +21,17 @@ const StyledCard = styled(Card)({
 const StyledCardHeader = styled(CardHeader)({
   borderBottom: "1px solid #e0e0e0",
   backgroundColor: primaryColor,
+  padding: "10px",
 });
 
 const StyledCardTitle = styled(Typography)({
-  fontSize: "1.25rem",
-  fontWeight: "bold",
+  fontSize: "17px",
+
   display: "flex",
   alignItems: "center",
   gap: "5px",
   color: "white",
+  fontFamily: "system-ui",
 });
 
 const StyledCardDescription = styled(Typography)({

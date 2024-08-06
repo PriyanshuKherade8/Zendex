@@ -13,7 +13,7 @@ const Container = styled(Card)`
 const Label = styled(Typography)`
   font-family: system-ui !important;
   font-weight: 600 !important;
-  color: #758694;
+  color: #03346e;
   font-size: 15px !important;
   margin-right: 8px;
   display: inline; /* Ensure it stays inline with the text */
