@@ -26,6 +26,7 @@ import Input from "../../UIComp/Input/Input";
 import Dropdown from "../../UIComp/dropdown/Dropdown";
 import { useForm } from "react-hook-form";
 import Textarea from "../../UIComp/textarea/Textarea";
+import { primaryColor } from "../../ThemeColor";
 
 const CustomCard = styled(Card)({
   width: "100%",
@@ -56,9 +57,13 @@ export default function RaiseForm() {
   return (
     <CustomCard variant="outlined">
       <CardHeader
-        title={<Typography variant="h5">Raise a Ticket</Typography>}
+        title={
+          <Typography variant="h5" color={primaryColor}>
+            Raise a Ticket
+          </Typography>
+        }
         subheader={
-          <Typography variant="body2">
+          <Typography variant="body2" color={primaryColor}>
             Fill out the form below to submit a new support ticket.
           </Typography>
         }
@@ -227,7 +232,11 @@ export default function RaiseForm() {
       </CardContent>
 
       <CardActions style={{ justifyContent: "flex-end" }}>
-        <Button variant="contained" color="primary" type="submit">
+        <Button
+          variant="contained"
+          style={{ backgroundColor: primaryColor }}
+          type="submit"
+        >
           Submit Ticket
         </Button>
       </CardActions>

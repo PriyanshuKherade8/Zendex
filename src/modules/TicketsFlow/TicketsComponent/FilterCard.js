@@ -66,12 +66,15 @@ const FilterCard = () => {
     >
       <CardHeader
         title={
-          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h6"
+            style={{ fontWeight: "bold", color: primaryColor }}
+          >
             Filters
           </Typography>
         }
         subheader={
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color={primaryColor}>
             Apply filters to your Zendesk ticket list.
           </Typography>
         }

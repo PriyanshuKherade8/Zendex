@@ -101,9 +101,9 @@ const TicketListContainer = styled(Paper)({
 const getStatusColor = (status) => {
   switch (status) {
     case "Open":
-      return { backgroundColor: "#6EACDA", color: "white" }; // Red for Open
+      return { backgroundColor: "#1679AB", color: "white" }; // Red for Open
     case "Closed":
-      return { backgroundColor: "#E2E2B6", color: "white" }; // Green for Closed
+      return { backgroundColor: "#102C57", color: "white" }; // Green for Closed
     default:
       return { backgroundColor: "#BEBEBE", color: "white" }; // Gray for Default
   }
