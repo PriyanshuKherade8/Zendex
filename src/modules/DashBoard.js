@@ -18,9 +18,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import Button from "@mui/material/Button"; // Import Button
-import { Routes, Route, useNavigate } from "react-router-dom"; // Import Routes and Route
-import TestComponent from "./Components/TestComponent"; // Sample component import
+import Button from "@mui/material/Button";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import TestComponent from "./Components/TestComponent";
 
 import Main from "./Main";
 import DashboardTwo from "./DashBoardTwo/DashBoardTwo";
@@ -32,11 +32,14 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import RaiseForm from "./TicketsFlow/TicketsComponent/RaiseForm";
 import TicketView from "./ViewTicket/TicketView";
+import { primaryColor } from "./ThemeColor";
 
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
+  backgroundColor: primaryColor,
+  color: "white",
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -49,6 +52,7 @@ const closedMixin = (theme) => ({
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  backgroundColor: primaryColor,
   overflowX: "hidden",
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
@@ -80,7 +84,7 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-  backgroundColor: "grey", // Change this to your desired color
+  backgroundColor: primaryColor,
 }));
 
 const Drawer = styled(MuiDrawer, {
@@ -103,7 +107,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -114,7 +118,7 @@ export default function MiniDrawer() {
   };
 
   const handleNavigation = (path) => {
-    navigate(path); // Navigate to the specified path
+    navigate(path);
   };
 
   return (
@@ -144,13 +148,16 @@ export default function MiniDrawer() {
             Zendesk Portal
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          {/* This will push the button to the right */}
           <Button
-            variant="contained"
+            variant="outlined"
             size="small"
-            color="primary"
+            // color="primary"
             onClick={() => handleNavigation("/raise-ticket")}
-            style={{ marginRight: "10px" }}
+            style={{
+              marginRight: "10px",
+              color: "white",
+              border: "1px solid white",
+            }}
           >
             Raise Ticket
           </Button>
@@ -164,9 +171,9 @@ export default function MiniDrawer() {
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
+              <ChevronRightIcon sx={{ color: "white" }} />
             ) : (
-              <ChevronLeftIcon />
+              <ChevronLeftIcon sx={{ color: "white" }} />
             )}
           </IconButton>
         </DrawerHeader>
@@ -184,7 +191,7 @@ export default function MiniDrawer() {
               <ListItemButton
                 onClick={() =>
                   handleNavigation(text.toLowerCase().replace(" ", "-"))
-                } // Navigate on click
+                }
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
@@ -196,11 +203,15 @@ export default function MiniDrawer() {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
+                    color: "white",
                   }}
                 >
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText
+                  primary={text}
+                  sx={{ opacity: open ? 1 : 0, color: "white" }}
+                />
               </ListItemButton>
             </ListItem>
           ))}
@@ -212,7 +223,7 @@ export default function MiniDrawer() {
               <ListItemButton
                 onClick={() =>
                   handleNavigation(text.toLowerCase().replace(" ", "-"))
-                } // Navigate on click
+                }
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
@@ -224,11 +235,15 @@ export default function MiniDrawer() {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
+                    color: "white",
                   }}
                 >
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText
+                  primary={text}
+                  sx={{ opacity: open ? 1 : 0, color: "white" }}
+                />
               </ListItemButton>
             </ListItem>
           ))}

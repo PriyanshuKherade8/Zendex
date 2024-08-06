@@ -14,6 +14,7 @@ import { Search } from "@mui/icons-material";
 import Input from "../../UIComp/Input/Input"; // Adjust as necessary
 import Dropdown from "../../UIComp/dropdown/Dropdown"; // Adjust as necessary
 import { useForm } from "react-hook-form";
+import { primaryColor } from "../../ThemeColor";
 
 const CustomButton = styled(Button)(({ theme }) => ({
   width: "100%",
@@ -184,7 +185,11 @@ const FilterCard = () => {
         </form>
       </CardContent>
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Button variant="contained" size="small">
+        <Button
+          variant="contained"
+          size="small"
+          style={{ backgroundColor: primaryColor }}
+        >
           Apply
         </Button>
       </CardActions>

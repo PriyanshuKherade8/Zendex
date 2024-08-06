@@ -14,6 +14,7 @@ import {
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styled from "styled-components";
 import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
+import { primaryColor } from "../ThemeColor";
 
 const columns = [
   { id: "id", label: "Ticket ID", minWidth: 50 },
@@ -100,22 +101,22 @@ const TicketListContainer = styled(Paper)({
 const getStatusColor = (status) => {
   switch (status) {
     case "Open":
-      return "error";
+      return { backgroundColor: "#6EACDA", color: "white" }; // Red for Open
     case "Closed":
-      return "success";
+      return { backgroundColor: "#E2E2B6", color: "white" }; // Green for Closed
     default:
-      return "default";
+      return { backgroundColor: "#BEBEBE", color: "white" }; // Gray for Default
   }
 };
 
 const getPriorityColor = (priority) => {
   switch (priority) {
     case "High":
-      return "warning";
+      return { backgroundColor: "#5A72A0", color: "white" }; // Orange for High
     case "Low":
-      return "primary";
+      return { backgroundColor: "#344955", color: "white" }; // Blue for Low
     default:
-      return "default";
+      return { backgroundColor: "#BEBEBE", color: "white" }; // Gray for Default
   }
 };
 
@@ -150,9 +151,10 @@ const TicketList = () => {
                   style={{
                     minWidth: column.minWidth,
                     fontWeight: "600",
-                    color: "blue",
+                    color: "white",
                     fontFamily: "system-ui",
                     fontSize: "15px",
+                    backgroundColor: primaryColor,
                   }}
                 >
                   {column.label}
@@ -171,18 +173,15 @@ const TicketList = () => {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           {column.id === "status" ? (
-                            <Chip label={value} color={getStatusColor(value)} />
+                            <Chip label={value} sx={getStatusColor(value)} />
                           ) : column.id === "priority" ? (
-                            <Chip
-                              label={value}
-                              color={getPriorityColor(value)}
-                            />
+                            <Chip label={value} sx={getPriorityColor(value)} />
                           ) : column.id === "actions" ? (
                             <IconButton
                               onClick={() => handleIconClick(row.id)} // Call the click handler
                               style={{
                                 color: "white",
-                                backgroundColor: "darkblue",
+                                backgroundColor: primaryColor,
                                 borderRadius: "50%",
                               }}
                             >
@@ -192,7 +191,7 @@ const TicketList = () => {
                             <span
                               style={{
                                 fontWeight: "500",
-                                color: "blue",
+                                color: primaryColor,
                                 fontFamily: "system-ui",
                                 fontSize: "14px",
                               }}
