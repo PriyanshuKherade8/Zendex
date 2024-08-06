@@ -124,7 +124,7 @@ const Properties = () => {
       <Container>
         <form>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={6} md={6}>
               <Dropdown
                 control={control}
                 maxMenuHeight={200}
@@ -135,7 +135,7 @@ const Properties = () => {
                 isRequired={false}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={6} md={6}>
               <Dropdown
                 control={control}
                 maxMenuHeight={200}
@@ -146,7 +146,7 @@ const Properties = () => {
                 isRequired={false}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={6} md={6}>
               <Dropdown
                 control={control}
                 maxMenuHeight={200}
@@ -157,7 +157,7 @@ const Properties = () => {
                 isRequired={false}
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={6} md={6}>
               <Dropdown
                 control={control}
                 maxMenuHeight={200}

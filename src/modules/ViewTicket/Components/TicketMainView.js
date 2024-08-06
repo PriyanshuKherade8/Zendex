@@ -5,9 +5,10 @@ import BasicView from "./BasicView";
 import TaskDetails from "../../Components/TaskDetails";
 
 const StyledBox = styled(Box)({
-  height: "520px",
+  // height: "520px",
   marginBottom: "10px",
   backgroundColor: "#ffffff",
+  paddingBottom: "20px",
 });
 
 const ScrollableTabs = styled(Tabs)({
