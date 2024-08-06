@@ -32,6 +32,8 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import RaiseForm from "./TicketsFlow/TicketsComponent/RaiseForm";
 import TicketView from "./ViewTicket/TicketView";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 import { primaryColor } from "./ThemeColor";
 
 const drawerWidth = 240;
@@ -151,7 +153,6 @@ export default function MiniDrawer() {
           <Button
             variant="outlined"
             size="small"
-            // color="primary"
             onClick={() => handleNavigation("/raise-ticket")}
             style={{
               marginRight: "10px",
@@ -180,17 +181,15 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {[
-            "Dashboard",
-            "DashboardTwo",
-            "dashboardthree",
-            "Starred",
-            "Send email",
-            "Drafts",
-          ].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+            { text: "Dashboard", icon: <DashboardOutlinedIcon /> },
+            { text: "Total Tickets", icon: <ListAltOutlinedIcon /> },
+            // { text: "DashboardThree", icon: <NotificationsNoneOutlinedIcon /> },
+            // { text: "Starred", icon: <AccountCircleOutlinedIcon /> },
+          ].map((item, index) => (
+            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 onClick={() =>
-                  handleNavigation(text.toLowerCase().replace(" ", "-"))
+                  handleNavigation(item.text.toLowerCase().replace(" ", "-"))
                 }
                 sx={{
                   minHeight: 48,
@@ -206,10 +205,10 @@ export default function MiniDrawer() {
                     color: "white",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {item.icon}
                 </ListItemIcon>
                 <ListItemText
-                  primary={text}
+                  primary={item.text}
                   sx={{ opacity: open ? 1 : 0, color: "white" }}
                 />
               </ListItemButton>
@@ -218,11 +217,15 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {[
+            { text: "All mail", icon: <InboxIcon /> },
+            { text: "Trash", icon: <MailIcon /> },
+            { text: "Spam", icon: <NotificationsNoneOutlinedIcon /> },
+          ].map((item, index) => (
+            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 onClick={() =>
-                  handleNavigation(text.toLowerCase().replace(" ", "-"))
+                  handleNavigation(item.text.toLowerCase().replace(" ", "-"))
                 }
                 sx={{
                   minHeight: 48,
@@ -238,10 +241,10 @@ export default function MiniDrawer() {
                     color: "white",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {item.icon}
                 </ListItemIcon>
                 <ListItemText
-                  primary={text}
+                  primary={item.text}
                   sx={{ opacity: open ? 1 : 0, color: "white" }}
                 />
               </ListItemButton>
@@ -255,13 +258,9 @@ export default function MiniDrawer() {
           {/* Define your routes here */}
           <Route path="/" element={<DashboardFive />} /> {/* Default route */}
           <Route path="/dashboard" element={<DashboardFive />} />
-          <Route path="/dashboardtwo" element={<DashboardTwo />} />
+          <Route path="/total-tickets" element={<SearchFilter />} />
           <Route path="/dashboardthree" element={<DashboardFive />} />
           <Route path="/Starred" element={<DashBoardComp />} />
-          <Route path="/drafts" element={<TestComponent />} />
-          <Route path="/all-mail" element={<TestComponent />} />
-          <Route path="/trash" element={<TestComponent />} />
-          <Route path="/spam" element={<TestComponent />} />
           <Route path="/total-tickets" element={<SearchFilter />} />
           <Route path="/open-tickets" element={<SearchFilter />} />
           <Route path="/closed-tickets" element={<SearchFilter />} />
