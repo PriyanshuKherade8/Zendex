@@ -284,7 +284,7 @@ function Dropdown({
           {!showSmartSearch && (
             <KeyboardArrowDownRoundedIcon
               onClick={() => {
-                ref.current.focus();
+                ref?.current?.focus();
               }}
             />
           )}

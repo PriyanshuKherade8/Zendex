@@ -6,9 +6,11 @@ import {
   Typography,
   Box,
   Grid,
+  Avatar,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import HelpCenterOutlinedIcon from "@mui/icons-material/HelpCenterOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 // Styled components
 const StyledCard = styled(Card)({
   width: "100%",
@@ -79,21 +81,30 @@ const Value = styled(Typography)`
   display: inline;
 `;
 
-const HelpdeskComponent = () => {
+const AvatarName = styled(Box)`
+  display: flex;
+  align-items: center;
+`;
+
+const Break = styled(Box)`
+  display: block;
+`;
+
+const RequesterInformation = () => {
   return (
     <StyledCard variant="outlined">
       <StyledCardHeader
         title={
           <StyledCardTitle>
-            <HelpCenterOutlinedIcon style={{ fontSize: "32px" }} />
-            IT Helpdesk
+            <PersonOutlineOutlinedIcon style={{ fontSize: "32px" }} />
+            Requester Information
           </StyledCardTitle>
         }
-        subheader={
-          <StyledCardDescription>
-            View and track the status of your recent support tickets.
-          </StyledCardDescription>
-        }
+        // subheader={
+        //   <StyledCardDescription>
+        //     View and track the status of your recent support tickets.
+        //   </StyledCardDescription>
+        // }
       />
       <Container>
         <Grid container spacing={2}>
@@ -103,8 +114,13 @@ const HelpdeskComponent = () => {
             md={12}
             style={{ display: "flex", alignItems: "center", gap: "5px" }}
           >
-            <Label variant="h5">Ticket ID :</Label>
-            <Value variant="body2">12378217401</Value>
+            {/* <Label variant="body1">Employee ID:</Label> */}
+            <AvatarName>
+              <Avatar alt="James Warren" src="/path/to/avatar.jpg" />
+              <Value variant="body2" style={{ marginLeft: "8px" }}>
+                James Warren (me)<Break>Sr. Technology Associate</Break>
+              </Value>
+            </AvatarName>
           </Grid>
           <Grid
             item
@@ -112,17 +128,8 @@ const HelpdeskComponent = () => {
             md={12}
             style={{ display: "flex", alignItems: "center", gap: "5px" }}
           >
-            <Label variant="h5">Ticket ID :</Label>
-            <Value variant="body2">lorem</Value>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={12}
-            style={{ display: "flex", alignItems: "center", gap: "5px" }}
-          >
-            <Label variant="h5">Ticket ID :</Label>
-            <Value variant="body2">lorem</Value>
+            <Label variant="h5">Mail ID :</Label>
+            <Value variant="body2">abc@gmail.com</Value>
           </Grid>
           <Grid
             item
@@ -139,4 +146,4 @@ const HelpdeskComponent = () => {
   );
 };
 
-export default HelpdeskComponent;
+export default RequesterInformation;

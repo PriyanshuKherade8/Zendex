@@ -10,8 +10,21 @@ const Container = styled(Box)`
 `;
 
 const Label = styled(Typography)`
-  font-weight: bold;
+  font-family: system-ui !important;
+  font-weight: 600 !important;
+  color: #758694;
+  font-size: 15px !important;
   margin-right: 8px;
+  display: inline; /* Ensure it stays inline with the text */
+`;
+
+const Value = styled(Typography)`
+  font-family: system-ui !important;
+  font-weight: 600 !important;
+  color: black;
+  font-size: 15px !important;
+  margin-right: 8px;
+  display: inline;
 `;
 
 const AvatarName = styled(Box)`
@@ -30,6 +43,8 @@ const DocumentLink = styled(Link)`
   display: flex;
   align-items: center;
   margin-right: 10px;
+  font-weight: 600 !important;
+  font-size: 15px !important;
 `;
 
 const TaskDetails = () => {
@@ -39,67 +54,70 @@ const TaskDetails = () => {
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
-          <Label variant="body1">Ticket ID:</Label>
-          <Typography variant="body2">12378217401</Typography>
+          <Label variant="h5">Ticket ID :</Label>
+          <Value variant="body2">12378217401</Value>
         </Grid>
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Task Type:</Label>
-          <Typography variant="body2">IT Issue</Typography>
+          <Value variant="body2">IT Issue</Value>
         </Grid>
+
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
-        >
-          <Label variant="body1">Created On:</Label>
-          <Typography variant="body2">Nov 1, 2020</Typography>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Employee ID:</Label>
           <AvatarName>
             <Avatar alt="James Warren" src="/path/to/avatar.jpg" />
-            <Typography variant="body2" style={{ marginLeft: "8px" }}>
+            <Value variant="body2" style={{ marginLeft: "8px" }}>
               James Warren
-            </Typography>
+            </Value>
           </AvatarName>
         </Grid>
+
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
+        >
+          <Label variant="body1">Created On:</Label>
+          <Value variant="body2">Nov 1, 2020</Value>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Location Store:</Label>
-          <Typography variant="body2">Store XYZ Name</Typography>
+          <Value variant="body2">Store XYZ Name</Value>
         </Grid>
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Employee Contact:</Label>
-          <Typography variant="body2">+1 382478340</Typography>
+          <Value variant="body2">+1 382478340</Value>
         </Grid>
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Status:</Label>
           <TaskStatus status="In Progress" label="In Progress" />
@@ -107,48 +125,48 @@ const TaskDetails = () => {
         <Grid
           item
           xs={12}
-          md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          md={6}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Priority:</Label>
-          <Typography
+          <Value
             variant="body2"
             style={{ color: "#d9534f", fontWeight: "bold" }}
           >
             High
-          </Typography>
+          </Value>
         </Grid>
         <Grid
           item
           xs={12}
           md={12}
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Description:</Label>
-          <Typography variant="body2">
+          <Value variant="body2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Typography>
+          </Value>
         </Grid>
         <Grid
           item
           xs={12}
           md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Assigned To:</Label>
           <AvatarName>
             <Avatar alt="Sam Andrew" src="/path/to/avatar.jpg" />
-            <Typography variant="body2" style={{ marginLeft: "8px" }}>
+            <Value variant="body2" style={{ marginLeft: "8px" }}>
               Sam Andrew
-            </Typography>
+            </Value>
           </AvatarName>
         </Grid>
         <Grid
           item
           xs={12}
           md={12}
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Documents:</Label>
           <DocumentLink href="/path/to/Document.doc">
@@ -162,10 +180,10 @@ const TaskDetails = () => {
           item
           xs={12}
           md={4}
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Due Date:</Label>
-          <Typography variant="body2">Nov 4, 2020</Typography>
+          <Value variant="body2">Nov 4, 2020</Value>
         </Grid>
       </Grid>
     </Container>

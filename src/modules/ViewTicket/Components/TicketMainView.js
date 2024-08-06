@@ -5,7 +5,6 @@ import BasicView from "./BasicView";
 import TaskDetails from "../../Components/TaskDetails";
 
 const StyledBox = styled(Box)({
-  //   border: "1px solid red",
   height: "520px",
   marginBottom: "10px",
   backgroundColor: "#ffffff",
@@ -16,6 +15,13 @@ const ScrollableTabs = styled(Tabs)({
   "& .MuiTabs-indicator": {
     backgroundColor: "#1890ff",
   },
+});
+
+const CustomTab = styled(Tab)({
+  fontWeight: "600",
+  fontFamily: "system-ui",
+  fontSize: "15px",
+  textTransform: "capitalize",
 });
 
 const TicketMainView = () => {
@@ -38,14 +44,14 @@ const TicketMainView = () => {
           scrollButtons="auto"
           aria-label="scrollable tabs example"
         >
-          <Tab label="Details" />
-          <Tab label="Relared tickets" />
-          <Tab label="Tasks" />
-          <Tab label="Assets" />
-          <Tab label="Associations" />
-          <Tab label="Approvals" />
-          <Tab label="Activities" />
-          <Tab label="Resolution" />
+          <CustomTab label="Details" />
+          <CustomTab label="Related tickets" />
+          <CustomTab label="Tasks" />
+          <CustomTab label="Assets" />
+          <CustomTab label="Associations" />
+          <CustomTab label="Approvals" />
+          <CustomTab label="Activities" />
+          <CustomTab label="Resolution" />
         </ScrollableTabs>
         {value === 0 && (
           <Box style={{ padding: "12px 0px 0px 12px" }}>

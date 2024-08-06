@@ -1,31 +1,21 @@
 import { Box } from "@mui/material";
 import React from "react";
 import HelpdeskComponent from "./HelpdeskComponent";
+import RequesterInformation from "./RequesterInformation";
+import Properties from "./Properties";
 
 const TicketRightView = () => {
   return (
     <>
       <Box>
-        <Box
-          style={{
-            border: "1px solid red",
-            height: "250px",
-            marginBottom: "10px",
-          }}
-        >
-          {"comp1"}
-        </Box>
-        <Box
-          style={{
-            border: "1px solid red",
-            height: "250px",
-            marginBottom: "10px",
-          }}
-        >
-          {"comp2"}
-        </Box>
-        <Box>
+        <Box style={{ marginBottom: "12px" }}>
           <HelpdeskComponent />
+        </Box>
+        <Box style={{ marginBottom: "12px" }}>
+          <RequesterInformation />
+        </Box>
+        <Box style={{ marginBottom: "12px" }}>
+          <Properties />
         </Box>
       </Box>
     </>
