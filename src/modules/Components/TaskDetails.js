@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Typography, Avatar, Link, Chip, Grid } from "@mui/material";
+import { Box, Typography, Avatar, Link, Chip, Grid, Card } from "@mui/material";
 import { AttachFile } from "@mui/icons-material";
 import { primaryColor } from "../ThemeColor";
 
-const Container = styled(Box)`
+const Container = styled(Card)`
   font-family: "system-ui";
   background-color: #fff;
   padding: 20px;
@@ -51,7 +51,7 @@ const DocumentLink = styled(Link)`
 
 const TaskDetails = () => {
   return (
-    <Container>
+    <Container variant="outlined">
       <Grid container spacing={2}>
         <Grid
           item

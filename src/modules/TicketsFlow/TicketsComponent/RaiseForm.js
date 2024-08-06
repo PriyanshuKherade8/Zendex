@@ -27,6 +27,7 @@ import Dropdown from "../../UIComp/dropdown/Dropdown";
 import { useForm } from "react-hook-form";
 import Textarea from "../../UIComp/textarea/Textarea";
 import { primaryColor } from "../../ThemeColor";
+import { useNavigate } from "react-router-dom";
 
 const CustomCard = styled(Card)({
   width: "100%",
@@ -43,6 +44,7 @@ const FormRow = styled("div")({
 });
 
 export default function RaiseForm() {
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -236,6 +238,9 @@ export default function RaiseForm() {
           variant="contained"
           style={{ backgroundColor: primaryColor }}
           type="submit"
+          onClick={() => {
+            navigate(`/total-tickets`);
+          }}
         >
           Submit Ticket
         </Button>

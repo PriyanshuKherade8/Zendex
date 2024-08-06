@@ -51,11 +51,6 @@ const TicketMainView = () => {
           <CustomTab label="Details" />
           <CustomTab label="Conversation" />
           <CustomTab label="Comments" />
-          <CustomTab label="Assets" />
-          <CustomTab label="Associations" />
-          <CustomTab label="Approvals" />
-          <CustomTab label="Activities" />
-          <CustomTab label="Resolution" />
         </ScrollableTabs>
         {value === 0 && (
           <Box style={{ padding: "12px 0px 0px 12px" }}>
@@ -72,11 +67,6 @@ const TicketMainView = () => {
             <TicketComments />
           </Box>
         )}
-        {value === 3 && <Box p={3}>Content for Ticket Four</Box>}
-        {value === 4 && <Box p={3}>Content for Ticket Five</Box>}
-        {value === 5 && <Box p={3}>Content for Ticket Six</Box>}
-        {value === 6 && <Box p={3}>Content for Ticket Seven</Box>}
-        {value === 7 && <Box p={3}>Content for Ticket Seven</Box>}
       </StyledBox>
     </>
   );
