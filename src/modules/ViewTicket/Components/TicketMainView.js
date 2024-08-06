@@ -3,6 +3,8 @@ import { Box, Tabs, Tab } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import BasicView from "./BasicView";
 import TaskDetails from "../../Components/TaskDetails";
+import TicketDetails from "../../Components/TicketDetails";
+import TicketComments from "../../DashBoardTwo/TicketComments";
 
 const StyledBox = styled(Box)({
   // height: "520px",
@@ -46,8 +48,8 @@ const TicketMainView = () => {
           aria-label="scrollable tabs example"
         >
           <CustomTab label="Details" />
-          <CustomTab label="Related tickets" />
-          <CustomTab label="Tasks" />
+          <CustomTab label="Conversation" />
+          <CustomTab label="Comments" />
           <CustomTab label="Assets" />
           <CustomTab label="Associations" />
           <CustomTab label="Approvals" />
@@ -59,8 +61,16 @@ const TicketMainView = () => {
             <TaskDetails />
           </Box>
         )}
-        {value === 1 && <Box p={3}>Content for Ticket Two</Box>}
-        {value === 2 && <Box p={3}>Content for Ticket Three</Box>}
+        {value === 1 && (
+          <Box style={{ padding: "12px 0px 0px 12px" }}>
+            <TicketDetails />
+          </Box>
+        )}
+        {value === 2 && (
+          <Box style={{ padding: "12px 0px 0px 12px" }}>
+            <TicketComments />
+          </Box>
+        )}
         {value === 3 && <Box p={3}>Content for Ticket Four</Box>}
         {value === 4 && <Box p={3}>Content for Ticket Five</Box>}
         {value === 5 && <Box p={3}>Content for Ticket Six</Box>}
