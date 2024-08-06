@@ -92,11 +92,11 @@ const HelpdeskComponent = () => {
             IT Helpdesk
           </StyledCardTitle>
         }
-        subheader={
-          <StyledCardDescription>
-            View and track the status of your recent support tickets.
-          </StyledCardDescription>
-        }
+        // subheader={
+        //   <StyledCardDescription>
+        //     View and track the status of your recent support tickets.
+        //   </StyledCardDescription>
+        // }
       />
       <Container>
         <Grid container spacing={2}>

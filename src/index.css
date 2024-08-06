@@ -12,7 +12,6 @@ code {
     monospace;
 } */
 
-
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 6px;
@@ -24,7 +23,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(142, 146, 144);
+  background-color: #03346e;
   border-radius: 9px;
   height: 20px;
   width: 3px;

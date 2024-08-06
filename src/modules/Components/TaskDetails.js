@@ -47,6 +47,7 @@ const DocumentLink = styled(Link)`
   font-weight: 600 !important;
   font-size: 15px !important;
   // color: #03346e !important;
+  cursor: pointer;
 `;
 
 const TaskDetails = () => {
@@ -172,13 +173,13 @@ const TaskDetails = () => {
         >
           <Label variant="body1">Documents:</Label>
           <DocumentLink
-            href="/path/to/Document.doc"
+            // href="/path/to/Document.doc"
             style={{ color: primaryColor }}
           >
             <AttachFile /> Document.doc ,
           </DocumentLink>
           <DocumentLink
-            href="/path/to/Document.jpg"
+            // href="/path/to/Document.jpg"
             style={{ color: primaryColor }}
           >
             <AttachFile /> Document.jpg
