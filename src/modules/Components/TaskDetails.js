@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Box, Typography, Avatar, Link, Chip, Grid } from "@mui/material";
 import { AttachFile } from "@mui/icons-material";
+import { primaryColor } from "../ThemeColor";
 
 const Container = styled(Box)`
   font-family: "system-ui";
@@ -45,6 +46,7 @@ const DocumentLink = styled(Link)`
   margin-right: 10px;
   font-weight: 600 !important;
   font-size: 15px !important;
+  // color: #03346e !important;
 `;
 
 const TaskDetails = () => {
@@ -169,10 +171,16 @@ const TaskDetails = () => {
           style={{ display: "flex", alignItems: "center", gap: "5px" }}
         >
           <Label variant="body1">Documents:</Label>
-          <DocumentLink href="/path/to/Document.doc">
+          <DocumentLink
+            href="/path/to/Document.doc"
+            style={{ color: primaryColor }}
+          >
             <AttachFile /> Document.doc ,
           </DocumentLink>
-          <DocumentLink href="/path/to/Document.jpg">
+          <DocumentLink
+            href="/path/to/Document.jpg"
+            style={{ color: primaryColor }}
+          >
             <AttachFile /> Document.jpg
           </DocumentLink>
         </Grid>

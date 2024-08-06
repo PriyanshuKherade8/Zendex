@@ -5,6 +5,7 @@ import BasicView from "./BasicView";
 import TaskDetails from "../../Components/TaskDetails";
 import TicketDetails from "../../Components/TicketDetails";
 import TicketComments from "../../DashBoardTwo/TicketComments";
+import { primaryColor } from "../../ThemeColor";
 
 const StyledBox = styled(Box)({
   // height: "520px",
@@ -16,7 +17,7 @@ const StyledBox = styled(Box)({
 const ScrollableTabs = styled(Tabs)({
   borderBottom: "1px solid #e8e8e8",
   "& .MuiTabs-indicator": {
-    backgroundColor: "#1890ff",
+    backgroundColor: primaryColor,
   },
 });
 

@@ -15,6 +15,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import Dropdown from "../../UIComp/dropdown/Dropdown";
 import { useForm } from "react-hook-form";
+import { primaryColor } from "../../ThemeColor";
 // Styled components
 const StyledCard = styled(Card)({
   width: "100%",
@@ -23,6 +24,7 @@ const StyledCard = styled(Card)({
 
 const StyledCardHeader = styled(CardHeader)({
   borderBottom: "1px solid #e0e0e0",
+  backgroundColor: primaryColor,
 });
 
 const StyledCardTitle = styled(Typography)({
@@ -31,6 +33,7 @@ const StyledCardTitle = styled(Typography)({
   display: "flex",
   alignItems: "center",
   gap: "5px",
+  color: "white",
 });
 
 const StyledCardDescription = styled(Typography)({
@@ -174,7 +177,13 @@ const Properties = () => {
               md={12}
               style={{ justifyContent: "flex-end", display: "flex" }}
             >
-              <Button variant="contained" color="primary" type="submit">
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                size="small"
+                style={{ backgroundColor: primaryColor }}
+              >
                 Update
               </Button>
             </Grid>

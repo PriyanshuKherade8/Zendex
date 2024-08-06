@@ -3,6 +3,7 @@ import React from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { styled } from "@mui/system";
+import { primaryColor } from "../../ThemeColor";
 
 // Create a styled component for Typography
 const StyledTypography = styled(Typography)({
@@ -31,7 +32,7 @@ const BasicView = () => {
             fontSize: "38px",
             // border: "1px solid red",
             color: "white",
-            backgroundColor: "black",
+            backgroundColor: primaryColor,
             padding: "8px",
           }}
         />

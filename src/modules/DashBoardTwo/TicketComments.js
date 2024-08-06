@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, Grid, styled } from "@mui/material";
 import Textarea from "../UIComp/textarea/Textarea";
+import { primaryColor } from "../ThemeColor";
 
 const Container = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -75,7 +76,11 @@ const TicketComments = () => {
       </Grid>
       <Grid item lg={12} md={12} xs={12} sm={12}>
         <Box style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            style={{ backgroundColor: primaryColor }}
+            size="small"
+          >
             Add Comment
           </Button>
         </Box>

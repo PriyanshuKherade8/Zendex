@@ -11,6 +11,7 @@ import {
 import { styled } from "@mui/system";
 import HelpCenterOutlinedIcon from "@mui/icons-material/HelpCenterOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { primaryColor } from "../../ThemeColor";
 // Styled components
 const StyledCard = styled(Card)({
   width: "100%",
@@ -19,6 +20,7 @@ const StyledCard = styled(Card)({
 
 const StyledCardHeader = styled(CardHeader)({
   borderBottom: "1px solid #e0e0e0",
+  backgroundColor: primaryColor,
 });
 
 const StyledCardTitle = styled(Typography)({
@@ -27,6 +29,7 @@ const StyledCardTitle = styled(Typography)({
   display: "flex",
   alignItems: "center",
   gap: "5px",
+  color: "white",
 });
 
 const StyledCardDescription = styled(Typography)({
