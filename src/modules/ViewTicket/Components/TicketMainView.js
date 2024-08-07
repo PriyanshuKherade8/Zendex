@@ -8,7 +8,6 @@ import TicketComments from "../../DashBoardTwo/TicketComments";
 import { primaryColor } from "../../ThemeColor";
 
 const StyledBox = styled(Box)({
-  // height: "520px",
   marginBottom: "10px",
   backgroundColor: "#ffffff",
   paddingBottom: "20px",
@@ -28,6 +27,14 @@ const CustomTab = styled(Tab)({
   textTransform: "capitalize",
 });
 
+const BackgroundBox = styled(Box)({
+  backgroundColor: "white",
+});
+
+const ContentBox = styled(Box)({
+  padding: "12px 0px 0px 12px",
+});
+
 const TicketMainView = () => {
   const [value, setValue] = React.useState(0);
 
@@ -37,9 +44,9 @@ const TicketMainView = () => {
 
   return (
     <>
-      <Box style={{ backgroundColor: "white" }}>
+      <BackgroundBox>
         <BasicView />
-      </Box>
+      </BackgroundBox>
       <StyledBox>
         <ScrollableTabs
           value={value}
@@ -53,19 +60,19 @@ const TicketMainView = () => {
           <CustomTab label="Comments" />
         </ScrollableTabs>
         {value === 0 && (
-          <Box style={{ padding: "12px 0px 0px 12px" }}>
+          <ContentBox>
             <TaskDetails />
-          </Box>
+          </ContentBox>
         )}
         {value === 1 && (
-          <Box style={{ padding: "12px 0px 0px 12px" }}>
+          <ContentBox>
             <TicketDetails />
-          </Box>
+          </ContentBox>
         )}
         {value === 2 && (
-          <Box style={{ padding: "12px 0px 0px 12px" }}>
+          <ContentBox>
             <TicketComments />
-          </Box>
+          </ContentBox>
         )}
       </StyledBox>
     </>
