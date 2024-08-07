@@ -1,11 +1,3 @@
-// import React from "react";
-
-// const RaiseForm = () => {
-//   return <div>RaiseForm</div>;
-// };
-
-// export default RaiseForm;
-
 import React from "react";
 import {
   Card,
@@ -13,12 +5,7 @@ import {
   CardContent,
   CardActions,
   Typography,
-  TextField,
   Button,
-  MenuItem,
-  Select,
-  InputLabel,
-  FormControl,
   Grid,
 } from "@mui/material";
 import { styled } from "@mui/system";
@@ -31,30 +18,17 @@ import { useNavigate } from "react-router-dom";
 
 const CustomCard = styled(Card)({
   width: "100%",
-  //   maxWidth: "1200px",
   margin: "0 auto",
   padding: "20px",
-});
-
-const FormRow = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  gap: "8px",
-  marginBottom: "16px",
 });
 
 export default function RaiseForm() {
   const navigate = useNavigate();
   const {
-    handleSubmit,
     register,
-    reset,
     formState: { errors },
     control,
     watch,
-    setValue,
-    trigger,
-    unregister,
   } = useForm();
   return (
     <CustomCard variant="outlined">
