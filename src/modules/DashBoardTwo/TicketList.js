@@ -101,22 +101,22 @@ const TicketListContainer = styled(Paper)({
 const getStatusColor = (status) => {
   switch (status) {
     case "Open":
-      return { backgroundColor: "#1679AB", color: "white" }; // Red for Open
+      return { backgroundColor: "#1679AB", color: "white" };
     case "Closed":
-      return { backgroundColor: "#102C57", color: "white" }; // Green for Closed
+      return { backgroundColor: "#102C57", color: "white" };
     default:
-      return { backgroundColor: "#BEBEBE", color: "white" }; // Gray for Default
+      return { backgroundColor: "#BEBEBE", color: "white" };
   }
 };
 
 const getPriorityColor = (priority) => {
   switch (priority) {
     case "High":
-      return { backgroundColor: "#5A72A0", color: "white" }; // Orange for High
+      return { backgroundColor: "#5A72A0", color: "white" };
     case "Low":
-      return { backgroundColor: "#344955", color: "white" }; // Blue for Low
+      return { backgroundColor: "#344955", color: "white" };
     default:
-      return { backgroundColor: "#BEBEBE", color: "white" }; // Gray for Default
+      return { backgroundColor: "#BEBEBE", color: "white" };
   }
 };
 
@@ -135,7 +135,7 @@ const TicketList = () => {
   };
 
   const handleIconClick = (id) => {
-    navigate(`/ticket/${id}`); // Redirect to the desired route, e.g., /ticket/:id
+    navigate(`/ticket/${id}`);
   };
 
   return (
@@ -178,7 +178,7 @@ const TicketList = () => {
                             <Chip label={value} sx={getPriorityColor(value)} />
                           ) : column.id === "actions" ? (
                             <IconButton
-                              onClick={() => handleIconClick(row.id)} // Call the click handler
+                              onClick={() => handleIconClick(row.id)}
                               style={{
                                 color: "white",
                                 backgroundColor: primaryColor,

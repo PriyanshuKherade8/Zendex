@@ -5,53 +5,21 @@ import {
   CardHeader,
   CardActions,
   Typography,
-  TextField,
   Grid,
   Button,
   styled,
 } from "@mui/material";
 import { Search } from "@mui/icons-material";
-import Input from "../../UIComp/Input/Input"; // Adjust as necessary
-import Dropdown from "../../UIComp/dropdown/Dropdown"; // Adjust as necessary
+import Input from "../../UIComp/Input/Input";
+import Dropdown from "../../UIComp/dropdown/Dropdown";
 import { useForm } from "react-hook-form";
 import { primaryColor } from "../../ThemeColor";
 
-const CustomButton = styled(Button)(({ theme }) => ({
-  width: "100%",
-  justifyContent: "flex-start",
-  textAlign: "left",
-  fontWeight: "normal",
-  borderRadius: "12px",
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.common.white,
-  "&:hover": {
-    backgroundColor: theme.palette.primary.dark,
-  },
-}));
-
 const FilterCard = () => {
   const {
-    handleSubmit,
-    register,
-    reset,
     formState: { errors },
     control,
-    watch,
-    setValue,
-    trigger,
-    unregister,
   } = useForm();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
 
   return (
     <Card
@@ -59,9 +27,7 @@ const FilterCard = () => {
       sx={{
         padding: "16px",
         borderRadius: "16px",
-        // boxShadow: 3,
         backgroundColor: "#ffffff",
-        // height: "150px",
       }}
     >
       <CardHeader
