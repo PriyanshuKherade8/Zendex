@@ -3,22 +3,30 @@ import React from "react";
 import HelpdeskComponent from "./HelpdeskComponent";
 import RequesterInformation from "./RequesterInformation";
 import Properties from "./Properties";
+import styled from "styled-components";
+
+const Container = styled(Box)`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledBox = styled(Box)`
+  margin-bottom: 12px;
+`;
 
 const TicketRightView = () => {
   return (
-    <>
-      <Box>
-        <Box style={{ marginBottom: "12px" }}>
-          <HelpdeskComponent />
-        </Box>
-        <Box style={{ marginBottom: "12px" }}>
-          <RequesterInformation />
-        </Box>
-        <Box style={{ marginBottom: "12px" }}>
-          <Properties />
-        </Box>
-      </Box>
-    </>
+    <Container>
+      <StyledBox>
+        <HelpdeskComponent />
+      </StyledBox>
+      <StyledBox>
+        <RequesterInformation />
+      </StyledBox>
+      <StyledBox>
+        <Properties />
+      </StyledBox>
+    </Container>
   );
 };
 
