@@ -5,6 +5,7 @@ import {
   Typography,
   LinearProgress,
   Box,
+  Grid,
 } from "@mui/material";
 import styled from "styled-components";
 import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
@@ -34,13 +35,16 @@ const PriorityContainer = styled.div`
 const ProgressLabel = styled(Typography)`
   display: flex;
   justify-content: space-between;
-  font-size: 0.875rem;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const CardContentWrapper = styled(Card)`
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px !important;
   height: 350px;
   border-radius: 12px !important;
 `;
@@ -90,54 +94,53 @@ const TicketsByPriority = () => {
         <ConfirmationNumberOutlinedIcon />
       </Header>
       <CardContent>
-        {priorities.map((priority, index) => (
-          <div key={index} style={{ marginBottom: "16px" }}>
-            <PriorityContainer>
-              <PriorityLabel
-                variant="body1"
-                style={{
-                  color: priority.color,
-                  marginBottom: "10px",
-                  display: "flex",
-                  gap: "6px",
-                }}
-              >
-                <FlagIcon viewBox="0 0 24 24">
-                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-                  <line x1="4" x2="4" y1="22" y2="15" />
-                </FlagIcon>
-                {priority.label}
-              </PriorityLabel>
-              <Typography variant="body2">{priority.count}</Typography>
-            </PriorityContainer>
-            <LinearProgress
-              variant="determinate"
-              value={priority.percentage}
-              sx={{
-                height: 8,
-                backgroundColor: "#e0e0e0",
-                "& .MuiLinearProgress-bar": {
-                  backgroundColor: primaryColor,
-                },
-                marginBottom: "4px",
-              }}
-            />
-            <ProgressLabel>
-              <Typography
-                variant="body1"
-                style={{ fontFamily: "system-ui", fontWeight: 600 }}
-              >
-                {priority.percentage}% of total tickets
-              </Typography>
-              <Typography
-                variant="body2"
-                style={{ fontFamily: "system-ui", fontWeight: 600 }}
-              >
-                {priority.description}
-              </Typography>
-            </ProgressLabel>
-          </div>
-        ))}
+        <Grid container spacing={0}>
+          {priorities.map((priority, index) => (
+            <Grid item xs={12} sm={12} md={12} key={index}>
+              <div style={{ marginBottom: "16px" }}>
+                <PriorityContainer>
+                  <PriorityLabel
+                    variant="body1"
+                    style={{
+                      color: priority.color,
+                      marginBottom: "10px",
+                      display: "flex",
+                      gap: "6px",
+                    }}
+                  >
+                    <FlagIcon viewBox="0 0 24 24">
+                      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                      <line x1="4" x2="4" y1="22" y2="15" />
+                    </FlagIcon>
+                    {priority.label}
+                  </PriorityLabel>
+                  <Typography variant="body2">{priority.count}</Typography>
+                </PriorityContainer>
+                <LinearProgress
+                  variant="determinate"
+                  value={priority.percentage}
+                  sx={{
+                    height: 8,
+                    backgroundColor: "#e0e0e0",
+                    "& .MuiLinearProgress-bar": {
+                      backgroundColor: primaryColor,
+                    },
+                    marginBottom: "4px",
+                  }}
+                />
+                <ProgressLabel
+                  variant="body2"
+                  style={{ fontFamily: "system-ui", fontWeight: 600 }}
+                >
+                  {priority.percentage}% of total tickets
+                  <span style={{ marginLeft: "8px" }}>
+                    {priority.description}
+                  </span>
+                </ProgressLabel>
+              </div>
+            </Grid>
+          ))}
+        </Grid>
       </CardContent>
     </CardContentWrapper>
   );
