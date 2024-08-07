@@ -7,7 +7,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<DashBoard />} />
-        {/* Define other routes for different components/pages */}
       </Routes>
     </Router>
   );

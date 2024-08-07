@@ -19,6 +19,47 @@ const CardContentWrapper = styled(Card)`
   border-radius: 12px;
 `;
 
+const Header = styled(Box)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Title = styled(Typography)`
+  font-size: 17px;
+  font-weight: 600;
+  font-family: system-ui;
+`;
+
+const StatsContainer = styled(Box)`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 16px;
+`;
+
+const StatBox = styled(Box)`
+  text-align: center;
+`;
+
+const StatValue = styled(Typography)`
+  font-size: 25px;
+  font-weight: 600;
+  font-family: system-ui;
+  margin-bottom: 5px;
+`;
+
+const StatLabel = styled(Typography)`
+  font-size: 14px;
+  font-weight: 600;
+  font-family: system-ui;
+  margin-bottom: 5px;
+`;
+
+const ImprovementBox = styled(StatBox)`
+  color: green;
+`;
+
 const ChartContainer = styled(Box)`
   width: 100%;
   height: 300px;
@@ -35,83 +76,22 @@ const data = [
 
 const ResolutionTime = () => (
   <CardContentWrapper variant="outlined">
-    <Box
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      <Typography
-        variant="h6"
-        style={{
-          fontSize: "17px",
-          fontWeight: "600",
-          fontFamily: "system-ui",
-        }}
-      >
-        Resolution Time
-      </Typography>
+    <Header>
+      <Title variant="h6">Resolution Time</Title>
       <HistoryOutlinedIcon />
-    </Box>
-    <Box
-      style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        width: "100%",
-        marginTop: "16px",
-      }}
-    >
-      <Box style={{ textAlign: "center" }}>
-        <Typography
-          variant="h4"
-          style={{
-            fontSize: "25px",
-            fontWeight: "600",
-            fontFamily: "system-ui",
-            marginBottom: "5px",
-          }}
-        >
-          12h 34m
-        </Typography>
-        <Typography
-          color="textSecondary"
-          style={{
-            fontSize: "14px",
-            fontWeight: "600",
-            fontFamily: "system-ui",
-            marginBottom: "5px",
-          }}
-        >
-          Avg. Resolution Time
-        </Typography>
-      </Box>
-      <Box style={{ textAlign: "center", color: "green" }}>
-        <Typography
-          variant="h4"
-          color="success"
-          style={{
-            fontSize: "25px",
-            fontWeight: "600",
-            fontFamily: "system-ui",
-            marginBottom: "5px",
-          }}
-        >
+    </Header>
+    <StatsContainer>
+      <StatBox>
+        <StatValue variant="h4">12h 34m</StatValue>
+        <StatLabel color="textSecondary">Avg. Resolution Time</StatLabel>
+      </StatBox>
+      <ImprovementBox>
+        <StatValue variant="h4" color="success">
           +5.2%
-        </Typography>
-        <Typography
-          color="textSecondary"
-          style={{
-            fontSize: "14px",
-            fontWeight: "600",
-            fontFamily: "system-ui",
-            marginBottom: "5px",
-          }}
-        >
-          Improvement from last month
-        </Typography>
-      </Box>
-    </Box>
+        </StatValue>
+        <StatLabel color="textSecondary">Improvement from last month</StatLabel>
+      </ImprovementBox>
+    </StatsContainer>
     <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>

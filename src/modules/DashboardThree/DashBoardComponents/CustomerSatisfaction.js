@@ -18,11 +18,20 @@ const CardContentWrapper = styled(Card)`
   flex-direction: column;
   padding: 16px;
   height: 470px;
+  border-radius: 12px !important;
 `;
 
-const Title = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+const Header = styled(Box)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+`;
+
+const Title = styled(Typography)`
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  font-family: system-ui !important;
 `;
 
 const FeedbackText = styled.div`
@@ -32,12 +41,21 @@ const FeedbackText = styled.div`
   font-size: 1.2rem;
 `;
 
-const PositiveFeedback = styled.div`
+const FeedbackBox = styled.div`
   text-align: center;
 `;
 
-const NegativeFeedback = styled.div`
-  text-align: center;
+const FeedbackValue = styled(Typography)`
+  font-size: 25px !important;
+  font-weight: 600 !important;
+  font-family: system-ui !important;
+  color: ${(props) => props.color} !important;
+`;
+
+const FeedbackLabel = styled(Typography)`
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  font-family: system-ui !important;
 `;
 
 const data = {
@@ -62,83 +80,31 @@ const options = {
 };
 
 const CustomerSatisfaction = () => (
-  <Card variant="outlined" style={{ borderRadius: "12px" }}>
-    <CardContentWrapper>
-      <ChartContainer>
-        <Box
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginBottom: "30px",
-          }}
-        >
-          <Typography
-            variant="h6"
-            style={{
-              fontSize: "17px",
-              fontWeight: "600",
-              fontFamily: "system-ui",
-            }}
-          >
-            Customer Satisfaction
-          </Typography>
-          <SentimentVerySatisfiedOutlinedIcon />
-        </Box>
-        <FeedbackText>
-          <PositiveFeedback>
-            <Typography
-              variant="h1"
-              style={{
-                fontSize: "25px",
-                fontWeight: "600",
-                fontFamily: "system-ui",
-                color: "green",
-              }}
-            >
-              93%
-            </Typography>
-            <Typography
-              variant="h6"
-              style={{
-                fontSize: "20px",
-                fontWeight: "600",
-                fontFamily: "system-ui",
-              }}
-            >
-              Positive Feedback
-            </Typography>
-          </PositiveFeedback>
-          <NegativeFeedback>
-            <Typography
-              variant="h1"
-              style={{
-                fontSize: "25px",
-                fontWeight: "600",
-                fontFamily: "system-ui",
-                color: "red",
-              }}
-            >
-              8%
-            </Typography>
-            <Typography
-              variant="h6"
-              style={{
-                fontSize: "20px",
-                fontWeight: "600",
-                fontFamily: "system-ui",
-              }}
-            >
-              Negative Feedback
-            </Typography>
-          </NegativeFeedback>
-        </FeedbackText>
-        <div style={{ height: "260px" }}>
-          <Pie data={data} options={options} />
-        </div>
-      </ChartContainer>
-    </CardContentWrapper>
-  </Card>
+  <CardContentWrapper variant="outlined">
+    <ChartContainer>
+      <Header>
+        <Title variant="h6">Customer Satisfaction</Title>
+        <SentimentVerySatisfiedOutlinedIcon />
+      </Header>
+      <FeedbackText>
+        <FeedbackBox>
+          <FeedbackValue variant="h1" color="green">
+            93%
+          </FeedbackValue>
+          <FeedbackLabel variant="h6">Positive Feedback</FeedbackLabel>
+        </FeedbackBox>
+        <FeedbackBox>
+          <FeedbackValue variant="h1" color="red">
+            8%
+          </FeedbackValue>
+          <FeedbackLabel variant="h6">Negative Feedback</FeedbackLabel>
+        </FeedbackBox>
+      </FeedbackText>
+      <div style={{ height: "260px" }}>
+        <Pie data={data} options={options} />
+      </div>
+    </ChartContainer>
+  </CardContentWrapper>
 );
 
 export default CustomerSatisfaction;

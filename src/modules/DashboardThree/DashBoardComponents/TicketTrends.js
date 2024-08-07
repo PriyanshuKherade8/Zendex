@@ -19,6 +19,19 @@ const CardContentWrapper = styled(Card)`
   border-radius: 12px;
 `;
 
+const Header = styled(Box)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+
+const Title = styled(Typography)`
+  font-size: 17px;
+  font-weight: 600;
+  font-family: system-ui;
+`;
+
 const ChartContainer = styled(Box)`
   width: 100%;
   height: 250px;
@@ -35,26 +48,10 @@ const data = [
 
 const TicketTrends = () => (
   <CardContentWrapper variant="outlined">
-    <Box
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginBottom: "20px",
-      }}
-    >
-      <Typography
-        style={{
-          fontSize: "17px",
-          fontWeight: "600",
-          fontFamily: "system-ui",
-        }}
-        variant="h6"
-      >
-        Ticket Trends
-      </Typography>
+    <Header>
+      <Title variant="h6">Ticket Trends</Title>
       <ConfirmationNumberOutlinedIcon />
-    </Box>
+    </Header>
     <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>

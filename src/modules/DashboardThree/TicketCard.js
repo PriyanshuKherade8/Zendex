@@ -1,7 +1,21 @@
 import React from "react";
 import { Box, Card, Typography } from "@mui/material";
-import { CardContentWrapper, CardTitle } from "./StyledComponents";
+import { CardContentWrapper } from "./StyledComponents";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const CardTitle = styled(Typography)`
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  font-family: system-ui !important;
+`;
+
+const CountTypography = styled(Typography)`
+  font-weight: 700 !important;
+  font-family: system-ui !important;
+  margin-bottom: 2px !important;
+`;
 
 export const TicketCard = ({ title, count, percentage, icon, color, to }) => (
   <Card variant="outlined" style={{ borderRadius: "10px" }}>
@@ -14,29 +28,11 @@ export const TicketCard = ({ title, count, percentage, icon, color, to }) => (
             marginBottom: "24px",
           }}
         >
-          <CardTitle
-            style={{
-              display: "flex",
-              fontSize: "15px",
-              fontWeight: "600",
-              fontFamily: "system-ui",
-            }}
-          >
-            {title}
-          </CardTitle>
+          <CardTitle>{title}</CardTitle>
           <Box style={{ display: "flex" }}>{icon}</Box>
         </Box>
         <Box>
-          <Typography
-            variant="h5"
-            style={{
-              fontWeight: "700",
-              fontFamily: "system-ui",
-              marginBottom: "2px",
-            }}
-          >
-            {count}
-          </Typography>
+          <CountTypography variant="h5">{count}</CountTypography>
           <Typography variant="body2" color="textSecondary">
             {percentage}
           </Typography>

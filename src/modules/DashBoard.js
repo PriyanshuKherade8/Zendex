@@ -20,13 +20,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import TestComponent from "./Components/TestComponent";
-
-import Main from "./Main";
-import DashboardTwo from "./DashBoardTwo/DashBoardTwo";
-import DashboardFive from "./DashboardThree/DashboardFour";
 import DashBoardComp from "./DashboardThree/DashBoardComponents/DashBoardComp";
-import MainTicket from "./TicketsFlow/TicketsComponent/MainTicket";
 import SearchFilter from "./TicketsFlow/TicketsComponent/SearchFilter";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
@@ -35,6 +29,7 @@ import TicketView from "./ViewTicket/TicketView";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 import { primaryColor } from "./ThemeColor";
+import MainDashboard from "./DashboardThree/DashboardFour";
 
 const drawerWidth = 240;
 
@@ -255,11 +250,10 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Routes>
-          {/* Define your routes here */}
-          <Route path="/" element={<DashboardFive />} /> {/* Default route */}
-          <Route path="/dashboard" element={<DashboardFive />} />
+          <Route path="/" element={<MainDashboard />} />
+          <Route path="/dashboard" element={<MainDashboard />} />
           <Route path="/total-tickets" element={<SearchFilter />} />
-          <Route path="/dashboardthree" element={<DashboardFive />} />
+          <Route path="/dashboardthree" element={<MainDashboard />} />
           <Route path="/Starred" element={<DashBoardComp />} />
           <Route path="/total-tickets" element={<SearchFilter />} />
           <Route path="/open-tickets" element={<SearchFilter />} />
